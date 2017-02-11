@@ -1,6 +1,10 @@
 # Vagrant
 .vagrant
 
+# -------
+# Bedrock
+# -------
+
 # Application
 web/app/plugins/*
 !web/app/plugins/.gitkeep
@@ -22,7 +26,21 @@ web/.htaccess
 vendor/*
 !vendor/.gitkeep
 
+# --------
+# /Bedrock
+# --------
+
+# ------------------------
+# Plug ins to keep in repo
+# ------------------------
+#!web/app/plugins/advanced-custom-fields-pro
+# ------------------------
+# /Plug ins to keep in repo
+# ------------------------
+
+# ---------
 # PHP Storm
+#----------
 
 # Created by https://www.gitignore.io/api/phpstorm
 
@@ -79,3 +97,7 @@ fabric.properties
 # *.ipr
 
 # End of https://www.gitignore.io/api/phpstorm
+
+# ---------
+# /PHP Storm
+#----------
