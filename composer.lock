@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "23cd7a3c9e30b3648c0f6096cdc55eb9",
-    "content-hash": "6215f50ab08ae042699c4e223a0a263f",
+    "hash": "02a108c64f863482fe0aea890020c713",
+    "content-hash": "266c785434e09ed1327b4bb057d71b31",
     "packages": [
         {
             "name": "composer/installers",
@@ -106,6 +106,88 @@
                 "zikula"
             ],
             "time": "2016-04-13 19:46:30"
+        },
+        {
+            "name": "folbert/acf-fewbricks-hidden",
+            "version": "v1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/folbert/acf-fewbricks-hidden.git",
+                "reference": "3dc9b3860a3ed8970e2b6e756a0e27c55eb26d6e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/folbert/acf-fewbricks-hidden/zipball/3dc9b3860a3ed8970e2b6e756a0e27c55eb26d6e",
+                "reference": "3dc9b3860a3ed8970e2b6e756a0e27c55eb26d6e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPLv3"
+            ],
+            "authors": [
+                {
+                    "name": "Björn Folbert",
+                    "email": "b@folbert.com",
+                    "homepage": "http://folbert.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Hidden field for Advanced Custom Fields. Written especially for Fewbricks.",
+            "homepage": "https://github.com/folbert/acf-fewbricks-hidden",
+            "keywords": [
+                "acf",
+                "advanced custom fields",
+                "fewbricks",
+                "hidden"
+            ],
+            "time": "2016-04-10 20:57:07"
+        },
+        {
+            "name": "folbert/fewbricks",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/folbert/fewbricks.git",
+                "reference": "18a79890a00ec86cc955430871272cb119cfcfc1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/folbert/fewbricks/zipball/18a79890a00ec86cc955430871272cb119cfcfc1",
+                "reference": "18a79890a00ec86cc955430871272cb119cfcfc1",
+                "shasum": ""
+            },
+            "require": {
+                "folbert/acf-fewbricks-hidden": ">=1.0",
+                "php": ">=5.4.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPLv3"
+            ],
+            "authors": [
+                {
+                    "name": "Björn Folbert",
+                    "email": "b@folbert.com",
+                    "homepage": "http://folbert.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Modular system for Advanced Custom Fields",
+            "homepage": "https://github.com/folbert/fewbricks",
+            "keywords": [
+                "acf",
+                "advanced custom fields",
+                "modules",
+                "reusable",
+                "wordpress"
+            ],
+            "time": "2016-05-07 20:16:04"
         },
         {
             "name": "johnpbloch/wordpress",
