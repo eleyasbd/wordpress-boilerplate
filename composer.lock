@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2b096bbfeb6bf470c0d49f09a21b090a",
-    "content-hash": "168f2858db7fcdd5addb39bd2d237e23",
+    "hash": "c76a92cd2c273bf9b021540621d7fbce",
+    "content-hash": "a9392bb79fa21bc0473887d6620c625a",
     "packages": [
         {
             "name": "composer/installers",
@@ -149,16 +149,16 @@
         },
         {
             "name": "folbert/fewbricks",
-            "version": "1.5.0",
+            "version": "1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/folbert/fewbricks.git",
-                "reference": "da18cacfd36e6da5f89f8dcf6b772ad8b2d1934a"
+                "reference": "53bf063472e931d8fced1de593d9e9676c099fd4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/folbert/fewbricks/zipball/da18cacfd36e6da5f89f8dcf6b772ad8b2d1934a",
-                "reference": "da18cacfd36e6da5f89f8dcf6b772ad8b2d1934a",
+                "url": "https://api.github.com/repos/folbert/fewbricks/zipball/53bf063472e931d8fced1de593d9e9676c099fd4",
+                "reference": "53bf063472e931d8fced1de593d9e9676c099fd4",
                 "shasum": ""
             },
             "require": {
@@ -187,7 +187,7 @@
                 "reusable",
                 "wordpress"
             ],
-            "time": "2017-02-13 21:23:47"
+            "time": "2017-02-13 21:53:41"
         },
         {
             "name": "johnpbloch/wordpress",

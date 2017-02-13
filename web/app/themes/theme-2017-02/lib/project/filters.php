@@ -4,7 +4,7 @@ namespace Wordpressboilerplate\Filters;
 
 add_filter('fewbricks/brick/brick_layout_base_path', __NAMESPACE__ . '\\get_fewbricks_layout_base_path');
 add_filter('fewbricks/brick/brick_template_base_path', __NAMESPACE__ . '\\get_fewbricks_brick_template_base_path');
-add_filter('fewbricks/brick/project_files_base_path', __NAMESPACE__ . '\\get_fewbricks_project_files_base_path');
+add_filter('fewbricks/project_files_base_path', __NAMESPACE__ . '\\get_fewbricks_project_files_base_path');
 add_filter('fewbricks/brick/brick_template_file_extension', __NAMESPACE__ . '\\get_fewbricks_template_file_extension');
 add_filter('body_class', __NAMESPACE__ . '\\set_body_classes');
 
