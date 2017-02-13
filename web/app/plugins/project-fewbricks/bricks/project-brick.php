@@ -52,27 +52,7 @@ class project_brick extends brick
   protected function get_brick_template_html($data = [], $template_base_path = false)
   {
 
-    if($template_base_path === false) {
-
-      /*$template_base_path = apply_filters(
-        'fewbricks/brick/brick_template_base_path',
-        get_stylesheet_directory() . '/fewbricks/bricks/'
-      );*/
-
-      $template_base_path = get_stylesheet_directory() . '/templates/modules/';
-
-    }
-
-    $template_path = $template_base_path .
-      str_replace('_', '-', \fewbricks\helpers\get_real_class_name($this)) .
-      '.view.php';
-
-    ob_start();
-
-    /** @noinspection PhpIncludeInspection */
-    include($template_path);
-
-    return ob_get_clean();
+    return parent::get_brick_template_html($template_base_path, $data);
 
   }
 

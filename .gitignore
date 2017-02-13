@@ -38,6 +38,7 @@ vendor/*
 # ------------------------
 #!web/app/plugins/advanced-custom-fields-pro
 !web/app/plugins/fbt-wp-bp-func-plug
+!web/app/plugins/project-fewbricks
 # ------------------------
 # /Plug ins to keep in repo
 # ------------------------
