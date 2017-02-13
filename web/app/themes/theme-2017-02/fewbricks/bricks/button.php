@@ -111,141 +111,118 @@ class button extends project_brick
   public function get_brick_html()
   {
 
-    $html = '';
+    return $this->get_brick_template_html($this->get_view_data());
 
-    switch ($this->get_field('type')) {
+  }
+
+  /**
+   *
+   */
+  private function get_view_data() {
+
+    $button_type = $this->get_field('type');
+
+    switch ($button_type) {
 
       case 'internal' :
 
-        $html = $this->get_internal_html();
+        $view_data = $this->get_internal_type_view_data();
         break;
 
       case 'external' :
 
-        $html = $this->get_external_html();
+        $view_data = $this->get_external_type_view_data();
         break;
 
       case 'email' :
 
-        $html = $this->get_email_html();
+        $view_data = $this->get_email_type_view_data();
         break;
 
       case 'download' :
 
-        $html = $this->get_download_html();
+        $view_data = $this->get_download_type_view_data();
         break;
 
     }
 
-    return '<p>' . $html . '</p>';
+    $view_data['type'] = $button_type;
+    $view_data['open_in_new_window'] = $this->get_field('target_blank');
+    $view_data['text'] = $this->get_field('text');
+
+    return $view_data;
 
   }
 
   /**
    * @return string
    */
-  private function get_internal_html()
+  private function get_internal_type_view_data()
   {
 
-    $html = '';
+    $view_data = [];
+
+    $view_data['href'] = '';
 
     $object_id = $this->get_field('internal_item');
 
     if (!empty($object_id)) {
 
-      $attributes = [];
-      $attributes['href'] = get_the_permalink($object_id);
-      $attributes['class'] = 'btn-default';
-
-      $html = $this->get_button_html($attributes);
+      $view_data['href'] = get_the_permalink($object_id);
 
     }
 
-    return $html;
+    return $view_data;
 
   }
 
   /**
    * @return string
    */
-  private function get_external_html()
+  private function get_external_type_view_data()
   {
 
-    $html = '';
+    $view_data = [];
 
-    $href = $this->get_field('external_url');
+    $view_data['href'] = $this->get_field('external_url');
 
-    if (!empty($href)) {
-
-      $attributes = [];
-      $attributes['href'] = $href;
-      $attributes['class'] = 'btn-default';
-
-      $html = $this->get_button_html($attributes);
-
-    }
-
-    return $html;
+    return $view_data;
 
   }
 
   /**
    * @return string
    */
-  private function get_email_html()
+  private function get_email_type_view_data()
   {
 
-    $html = '';
+    $view_data = [];
 
-    $href = $this->get_field('email');
+    $view_data['href'] = 'mailto:' . $this->get_field('email');
 
-    if (!empty($href)) {
-
-      $attributes = [];
-      $attributes['href'] = 'mailto:' . $href;
-      $attributes['class'] = 'btn-default';
-
-      $html = $this->get_button_html($attributes);
-
-    }
-
-    return $html;
+    return $view_data;
 
   }
 
   /**
    * @return string
    */
-  private function get_download_html()
+  private function get_download_type_view_data()
   {
 
-    $html = '';
+    $view_data = [];
+
+    $view_data['href'] = '';
 
     $file_id = $this->get_field('file');
 
     if (!empty($file_id)) {
 
-      $attributes = [];
-      $attributes['href'] = wp_get_attachment_url($file_id);
-      $attributes['class'] = 'btn-default';
-
-      $html = $this->get_button_html($attributes);
+      $view_data['href'] = wp_get_attachment_url($file_id);
 
     }
 
-    return $html;
-
-  }
-
-  /**
-   * @param $text
-   * @param $attributes
-   * @return string
-   */
-  private function get_button_html($attributes, $text = false)
-  {
-
-    return $this->get_brick_template_html($attributes);
+    return $view_data;
 
   }
 

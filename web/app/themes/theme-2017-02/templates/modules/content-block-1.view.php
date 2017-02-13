@@ -1,6 +1,6 @@
 <?php
 
-$main_elm_styles = '';
+$main_elm_styles = 'border-bottom: solid 20px yellow;';
 $main_elm_extra_css_classes = '';
 
 if(!isset($data['is_fullwidth'])) {
@@ -10,10 +10,6 @@ if(!isset($data['is_fullwidth'])) {
 if($data['is_fullwidth']) {
 
   $main_elm_extra_css_classes .= ' content-block-1--fullwidth';
-
-} else {
-
-  $main_elm_styles = 'background: red; margin-left: -15px; margin-right: -15px; padding-left: 15px; padding-right: 15px;';
 
 }
 

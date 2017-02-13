@@ -36,13 +36,13 @@ class content_block_1 extends project_brick
   private function set_settings_fields()
   {
 
-    $this->add_field(new acf_fields\tab('Settings', 'settings', '1702121052a'));
+    //$this->add_field(new acf_fields\tab('Content Block Settings', 'settings', '1702121052a'));
 
     $this->add_field(new acf_fields\image('Content block - Background image', 'block_background_image', '1702121053a'));
 
     $this->add_common_field('background_color', '1702121545a', [
       'name' => 'block_background_color',
-      'label' => 'Content block - background color'
+      'label' => 'Content block - Background color'
     ]);
 
     $this->add_field(new acf_fields\select('Content block - Vertical padding', 'vertical_padding', '1702122201a', [
@@ -64,23 +64,23 @@ class content_block_1 extends project_brick
   private function set_column_fields()
   {
 
-    $fc = new acf_fields\flexible_content('', 'content', '1702122301a', [
+    $fc = new acf_fields\flexible_content('Content block - Content', 'content', '1702122301a', [
       'button_label' => 'Add row'
     ]);
 
-    $layout = new layout('1 column', 'layout_1', '1702122301b');
+    $layout = new layout('Row - 1 column', 'layout_1', '1702122301b');
     $layout->add_brick((new row_1('1-column', '1702122301c'))->set_arg('nr_of_columns', 1));
     $fc->add_layout($layout);
 
-    $layout = new layout('2 columns', 'layout_2', '1702122301x');
+    $layout = new layout('Row - 2 columns', 'layout_2', '1702122301x');
     $layout->add_brick((new row_1('2-column', '1702122301y'))->set_arg('nr_of_columns', 2));
     $fc->add_layout($layout);
 
-    $layout = new layout('3 columns', 'layout_3', '1702122319a');
+    $layout = new layout('Row - 3 columns', 'layout_3', '1702122319a');
     $layout->add_brick((new row_1('3-column', '1702122319b'))->set_arg('nr_of_columns', 3));
     $fc->add_layout($layout);
 
-    $layout = new layout('4 columns', 'layout_4', '1702122319x');
+    $layout = new layout('Row - 4 columns', 'layout_4', '1702122319x');
     $layout->add_brick((new row_1('4-column', '1702122319y'))->set_arg('nr_of_columns', 4));
     $fc->add_layout($layout);
 

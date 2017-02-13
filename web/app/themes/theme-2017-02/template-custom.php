@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Custom Template
+ * XTemplate Name: Custom Template
  */
 ?>
 

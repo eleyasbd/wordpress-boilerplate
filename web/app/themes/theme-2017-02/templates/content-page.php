@@ -7,7 +7,7 @@ while (have_rows('page_content')) {
 
   /** @noinspection PhpUndefinedMethodInspection */
   echo \fewbricks\acf\fields\flexible_content::get_sub_field_brick_instance()->get_html([
-    'is_fullwidth' => true,
+    'is_fullwidth' => (isset($data['fullwidth_template']) && $data['fullwidth_template'] === true),
   ]);
 
 }

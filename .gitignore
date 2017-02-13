@@ -32,6 +32,8 @@ vendor/*
 
 # ------------------------
 # Plug ins to keep in repo
+# Commented out so that they are not in the boilerplate repo
+# but easily can be kept later on.
 # ------------------------
 #!web/app/plugins/advanced-custom-fields-pro
 # ------------------------

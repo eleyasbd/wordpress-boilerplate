@@ -1,6 +1,17 @@
 .content-block-1 {
   background: no-repeat center center;
   background-size: cover;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.content-block-1--fullwidth {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .content-block-1--padding-standard {
