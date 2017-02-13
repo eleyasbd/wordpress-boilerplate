@@ -32,10 +32,12 @@ vendor/*
 
 # ------------------------
 # Plug ins to keep in repo
-# Commented out so that they are not in the boilerplate repo
-# but easily can be kept later on.
+# The ones that are commented out should not be in the original boilerplate repo.
+# But you will most likely want to uncomment them to keep them in the repo when
+# the boilerplate is used in a project.
 # ------------------------
 #!web/app/plugins/advanced-custom-fields-pro
+!web/app/plugins/fbt-wp-bp-func-plug
 # ------------------------
 # /Plug ins to keep in repo
 # ------------------------
