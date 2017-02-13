@@ -2,6 +2,9 @@
 
 use Roots\Sage\Setup;
 use Roots\Sage\Wrapper;
+use Wordpressboilerplate\Setup as wpbpsetup;
+
+$is_fullwidth_page = wpbpsetup\is_fullwidth_page(get_the_ID());
 
 ?>
 
@@ -15,21 +18,37 @@ use Roots\Sage\Wrapper;
       </div>
     <![endif]-->
     <?php
-      do_action('get_header');
       get_template_part('templates/header');
     ?>
-    <div class="wrap container" role="document">
+
+    <?php
+    if(!$is_fullwidth_page) {
+    ?>
+    <div class="wrap container">
       <div class="content row">
+    <?php
+        }
+    ?>
         <main class="main">
+
           <?php include Wrapper\template_path(); ?>
+
         </main><!-- /.main -->
-        <?php if (Setup\display_sidebar()) : ?>
+
+        <?php if (Setup\display_sidebar()) { ?>
           <aside class="sidebar">
             <?php include Wrapper\sidebar_path(); ?>
           </aside><!-- /.sidebar -->
-        <?php endif; ?>
+        <?php } ?>
+
+    <?php
+    if(!$is_fullwidth_page) {
+    ?>
       </div><!-- /.content -->
     </div><!-- /.wrap -->
+    <?php
+    }
+    ?>
     <?php
       do_action('get_footer');
       get_template_part('templates/footer');

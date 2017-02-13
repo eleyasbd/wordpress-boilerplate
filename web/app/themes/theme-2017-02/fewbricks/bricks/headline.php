@@ -47,9 +47,11 @@ class headline extends project_brick
   public function get_brick_html()
   {
 
-    $level = $this->get_field('level');
+    $view_data = [];
+    $view_data['level'] = $this->get_field('level');
+    $view_data['text'] = $this->get_field('text');
 
-    return '<h' . $level . '>' . $this->get_field('text') . '</h' . $level . '>';
+    return $this->get_brick_template_html($view_data);
 
   }
 

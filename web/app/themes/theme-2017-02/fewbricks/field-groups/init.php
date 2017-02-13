@@ -10,3 +10,4 @@
  */
 
 require(__DIR__ . '/fewbricks-field-group-page.php');
+//require(__DIR__ . '/field-group-template-fewbricks-demo.php');

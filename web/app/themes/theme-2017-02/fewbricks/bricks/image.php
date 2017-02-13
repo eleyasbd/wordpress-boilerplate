@@ -29,12 +29,25 @@ class image extends project_brick
   }
 
   /**
+   * @return array
+   */
+  private function get_view_data() {
+
+    $view_data = [];
+
+    $view_data['media_id'] = $this->get_field('image');
+
+    return $view_data;
+
+  }
+
+  /**
    * @return string|void
    */
   public function get_brick_html()
   {
 
-    return '<div class="brick-wysiwyg">' . $this->get_field('text') . '</div>';
+    return $this->get_brick_template_html($this->get_view_data());
 
   }
 

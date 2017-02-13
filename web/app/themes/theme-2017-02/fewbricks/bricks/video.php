@@ -22,10 +22,10 @@ class video extends project_brick
   protected function get_brick_html()
   {
 
-    $viewData = [];
-    $viewData['url'] = $this->get_video_url();
+    $view_data = [];
+    $view_data['url'] = $this->get_video_url();
 
-    return $this->get_brick_template_html($viewData);
+    return $this->get_brick_template_html($view_data);
 
   }
 

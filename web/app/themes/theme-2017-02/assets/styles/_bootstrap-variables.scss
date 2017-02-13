@@ -1,0 +1,29 @@
+// Grid settings
+
+// Add new breakpoints, XXL and XXXL
+// http://blog.codeply.com/2016/06/06/how-to-create-a-new-breakpoint-in-bootstrap-4/
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1600px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1340px,
+  xxxl: 1540px
+);
+// Done adding new breakpoint
+
+$main-sm-columns:       12;
+$sidebar-sm-columns:    4;
+
+// Colors
+$brand-primary:         #27ae60;

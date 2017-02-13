@@ -24,7 +24,19 @@ class wysiwyg extends project_brick
   public function set_fields()
   {
 
-    $this->add_field(new acf_fields\wysiwyg('Text', 'text', '1603250053a'));
+    $this->add_field(new acf_fields\wysiwyg('Text', 'content', '1603250053a', [
+      'media_upload' => false
+    ]));
+
+  }
+
+  private function get_view_data() {
+
+    $view_data = [];
+
+    $view_data['content'] = $this->get_field('content');
+
+    return $view_data;
 
   }
 
@@ -34,7 +46,7 @@ class wysiwyg extends project_brick
   public function get_brick_html()
   {
 
-    return '<div class="brick-wysiwyg">' . $this->get_field('text') . '</div>';
+    return $this->get_brick_template_html($this->get_view_data());
 
   }
 

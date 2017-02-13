@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Sage includes
  *
@@ -15,7 +16,13 @@ $sage_includes = [
   'lib/setup.php',     // Theme setup
   'lib/titles.php',    // Page titles
   'lib/wrapper.php',   // Theme wrapper class
-  'lib/customizer.php' // Theme customizer
+  'lib/customizer.php', // Theme customizer
+
+  // Project specific
+  'lib/project/folbert-theme-view.php',
+  'lib/project/setup.php',
+  'lib/project/actions.php',
+  'lib/project/filters.php',
 ];
 
 foreach ($sage_includes as $file) {

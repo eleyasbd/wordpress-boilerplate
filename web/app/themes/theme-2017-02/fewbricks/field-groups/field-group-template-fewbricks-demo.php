@@ -38,7 +38,7 @@ $fewbricks_fg = (new fewacf\field_group('Fewbricks Demo - Jumbotron', '160324231
 
 $fewbricks_fg->add_brick(new bricks\demo_jumbotron('jumbotron', '1603242319a'));
 
-$fewbricks_fg->register();
+//$fewbricks_fg->register();
 
 /**
  * 3 Columns
@@ -80,7 +80,7 @@ $fewbricks_fc->add_layout($fewbricks_l);
 
 $fewbricks_fg->add_flexible_content($fewbricks_fc);
 
-$fewbricks_fg->register();
+//$fewbricks_fg->register();
 
 /**
  * Buttons list
@@ -90,7 +90,7 @@ $fewbricks_fg = (new fewacf\field_group('Fewbricks Demo - Buttons list', '150911
 
 $fewbricks_fg->add_brick((new bricks\demo_buttons_list('buttons_list', '1509052316o'))->set_field_label_prefix('Button list'));
 
-$fewbricks_fg->register();
+//$fewbricks_fg->register();
 
 /**
  * Standard list
@@ -100,7 +100,7 @@ $fewbricks_fg = (new fewacf\field_group('Fewbricks Demo - Standard list', '15091
 
 $fewbricks_fg->add_brick((new bricks\demo_standard_list('a_list', '1509042107x'))->set_field_label_prefix('A list'));
 
-$fewbricks_fg->register();
+//$fewbricks_fg->register();
 
 /**
  * Footer.
@@ -113,4 +113,4 @@ $fewbricks_fg = (new fewacf\field_group('Fewbricks Demo - Footer', '1603242347a'
 
 $fewbricks_fg->add_field(new acf_fields\text('Footer text', 'footer_text', '1603242348a'));
 
-$fewbricks_fg->register();
+//$fewbricks_fg->register();

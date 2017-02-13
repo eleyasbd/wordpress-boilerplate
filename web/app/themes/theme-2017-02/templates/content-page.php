@@ -1,5 +1,13 @@
-<?php //the_content(); ?>
-<?php //wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
-
 <?php
-echo (new \fewbricks\bricks\content_1('page_content'))->get_html();
+
+// loop through the rows of data
+while (have_rows('page_content')) {
+
+  the_row();
+
+  /** @noinspection PhpUndefinedMethodInspection */
+  echo \fewbricks\acf\fields\flexible_content::get_sub_field_brick_instance()->get_html([
+    'is_fullwidth' => true,
+  ]);
+
+}

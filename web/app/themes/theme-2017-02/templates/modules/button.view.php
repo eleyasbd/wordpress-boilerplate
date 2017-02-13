@@ -1,20 +1,20 @@
 <?php
 
-if (isset($viewData['class'])) {
-  $viewData['class'] = 'btn ' . $viewData['class'];
+if (isset($data['class'])) {
+  $data['class'] = 'btn ' . $data['class'];
 } else {
-  $viewData['class'] = 'btn';
+  $data['class'] = 'btn';
 }
 
 if(!empty($this->css_class)) {
 
-  $viewData['class'] .= ' ' . $this->css_class;
+  $data['class'] .= ' ' . $this->css_class;
 
 }
 
 $html = '<a';
-$html .= ' href="' . $viewData['href'] . '"';
-$html .= ' class="' . $viewData['class'] . '"';
+$html .= ' href="' . $data['href'] . '"';
+$html .= ' class="' . $data['class'] . '"';
 $html .= ($this->get_field('target_blank') ? ' target="_blank"' : '');
 $html .= '>';
 $html .= $this->get_field('text');
