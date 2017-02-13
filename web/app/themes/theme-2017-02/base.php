@@ -53,6 +53,10 @@ $is_fullwidth_page = wpbpsetup\is_fullwidth_page(get_the_ID());
       do_action('get_footer');
       get_template_part('templates/footer');
       wp_footer();
+
     ?>
+
+    <?php echo do_action('FbtWpBpFuncPlug\CookieAlert', 'Cookies!', 'Åkej', 'wpboilerplate', 'wpboilerplate--cookies-okd', '', (WP_ENV === 'development')); ?>
+
   </body>
 </html>

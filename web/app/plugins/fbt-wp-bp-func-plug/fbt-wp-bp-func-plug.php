@@ -17,6 +17,7 @@ class Fbt_Wp_Bp_Func_Plug {
     private $files = [
         'Fbt_Wp_Bp_Func_Plug_Admin_Filters' => 'admin/class-fbt-wp-bp-func-plug-admin-filters.php',
         'Fbt_Wp_Bp_Func_Plug_Admin_Actions' => 'admin/class-fbt-wp-bp-func-plug-admin-actions.php',
+        '0' => 'public/class-fbt-wp-bp-func-plug-cookie-alert.php',
     ];
 
     /**
@@ -28,8 +29,11 @@ class Fbt_Wp_Bp_Func_Plug {
 
         foreach($this->files AS $class_name => $file_path) {
             require_once($base_path . $file_path);
-            $class_name = 'FbtWpBpFuncPlug\\' . $class_name;
-            (new $class_name())->run();
+
+            if(intval($class_name) !== $class_name) {
+                $class_name = 'FbtWpBpFuncPlug\\' . $class_name;
+                (new $class_name())->run();
+            }
         }
 
     }

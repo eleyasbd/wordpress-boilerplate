@@ -26,6 +26,17 @@ class html_list extends project_brick
 
     $this->add_field(new acf_fields\text('List headline', 'headline', '1509052316y'));
 
+    $this->add_field(new acf_fields\select('List type', 'type', '1502132304a', [
+        'choices' => [
+            'ul' => 'Unordered - Dots',
+            'ol' => 'Ordered - Numbers',
+            'type-ol--upper-alpha' => 'Ordered - Uppercase Alphabetical',
+            'type-ol--upper-roman' => 'Ordered - Uppercase Roman',
+        ],
+        'default_value' => 'ul',
+        'allow_null' => false,
+    ]));
+
     $list_items_repeater = (new acf_fields\repeater('Items', 'items', '1509052323a', [
       'button_label' => 'Add item'
     ]));
@@ -55,6 +66,9 @@ class html_list extends project_brick
       ];
 
     }
+
+    $view_data['headline'] = $this->get_field('headline');
+    $view_data['type'] = $this->get_field('type');
 
     return $view_data;
 

@@ -1,4 +1,30 @@
-<ul>
+<?php
+
+$list_tag = $data['type'];
+$list_elm_attributes = [];
+$class_attr_value = '';
+
+if($data['type'] !== 'ul' && $data['type'] !== 'ol') {
+
+  if(substr($data['type'], 0, 5) === 'type-') {
+
+    $data['type'] = substr($data['type'], 5);
+    $type_pieces = explode('--', $data['type']);
+    $list_tag = $type_pieces[0];
+
+    $class_attr_value .= ' list--' . $type_pieces[1];
+
+  }
+
+}
+
+if(!empty($class_attr_value)) {
+  $list_elm_attributes['class'] = $class_attr_value;
+}
+
+?>
+
+<<?php echo $list_tag; ?> <?php echo \Wordpressboilerplate\Helpers\assoc_array_to_elm_attributes_string($list_elm_attributes); ?>>
 
   <?php
 
@@ -28,4 +54,4 @@
 
   ?>
 
-</ul>
+</<?php echo $list_tag; ?>>
