@@ -1,7 +1,7 @@
 <?php
 
 $main_elm_styles = 'border-bottom: solid 20px yellow;';
-$main_elm_extra_css_classes = '';
+$main_elm_css_classes = 'content-block-1';
 
 if(!isset($data['is_fullwidth'])) {
   $data['is_fullwidth'] = false;
@@ -9,9 +9,17 @@ if(!isset($data['is_fullwidth'])) {
 
 if($data['is_fullwidth']) {
 
-  $main_elm_extra_css_classes .= ' content-block-1--fullwidth';
+  $main_elm_css_classes .= ' content-block-1--fullwidth';
 
 }
+
+// Vertical padding
+// ----------------
+if(isset($data['vertical_padding']) && is_string($data['vertical_padding'])) {
+  $main_elm_css_classes .= ' content-block-1--vertical-padding-' . $data['vertical_padding'];
+}
+// -----------------
+// /Vertical padding
 
 // Background
 // ----------
@@ -31,16 +39,9 @@ if(!empty($background_image_src)) {
 // -----------
 // /Background
 
-// Vertical padding
-// ----------------
-if(isset($data['vertical_padding']) && is_string($data['vertical_padding'])) {
-  $main_elm_extra_css_classes .= ' content-block-1--padding-' . $data['vertical_padding'];
-}
-// -----------------
-// /Vertical padding
 ?>
 
-<div class="content-block-1<?php echo $main_elm_extra_css_classes; ?>"<?php echo (!empty($main_elm_styles) ? ' style="' . $main_elm_styles . '"' : ''); ?>>
+<div class="<?php echo $main_elm_css_classes; ?>"<?php echo (!empty($main_elm_styles) ? ' style="' . $main_elm_styles . '"' : ''); ?>>
 
   <?php
   if($data['is_fullwidth'] === true) {
