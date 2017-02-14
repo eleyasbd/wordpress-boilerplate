@@ -29,7 +29,7 @@ class button extends project_brick
           'internal' => 'Internal',
           'external' => 'External',
           'email' => 'E-mail',
-          'download' => 'Download'
+          'download' => 'Download',
         ],
         'allow_null' => false,
         'default_value' => 'internal',

@@ -1,4 +1,10 @@
 <?php
+  echo (new \fewbricks\bricks\page_header('page_header'))->get_html([
+    'in_container' => (!isset($data['fullwidth_template']) || $data['fullwidth_template'] === false)
+  ]);
+?>
+
+<?php
 
 // loop through the rows of data
 while (have_rows('page_content')) {

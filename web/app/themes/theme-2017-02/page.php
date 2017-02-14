@@ -1,15 +1,16 @@
 <div class="container">
-<?php
 
-while (have_posts()) {
+  <?php
 
-  the_post();
+  while (have_posts()) {
 
-  echo Folbert\Templating::get_template_part('templates/content', 'page', [
-    'fullwidth_template' => false
-  ]);
+    the_post();
 
-}
+    echo Folbert\Templating::get_template_part('templates/content', 'page', [
+      'fullwidth_template' => false
+    ]);
 
-?>
+  }
+
+  ?>
 </div>

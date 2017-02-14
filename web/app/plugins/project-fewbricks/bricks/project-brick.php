@@ -40,21 +40,12 @@ class project_brick extends brick
 
     }
 
-  /**
-   * Executes a template file for the current class and returns the output.
-   * Implements filter fewbricks/brick/brick_template_base_path allowing you to override where the template file
-   * resides. Value returned by the hook should end with a slash. Note that the filter will only run if
-   * the first argument to this funciton is false.
-   * @param array $data
-   * @param bool|string $template_base_path If you want to set a specific base path, pass it here. End with a slash.
-   * @return string
-   */
-  protected function get_brick_template_html($data = [], $template_base_path = false)
-  {
+    protected function get_brick_template_html($data = [], $template_base_path = false)
+    {
 
-    return parent::get_brick_template_html($template_base_path, $data);
+        return parent::get_brick_template_html($template_base_path, $data);
 
-  }
+    }
 
     /**
      * @param $data_key

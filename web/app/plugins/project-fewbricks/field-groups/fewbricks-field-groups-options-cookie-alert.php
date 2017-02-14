@@ -24,8 +24,7 @@ $fewbricks_fg_location = [
 ];
 
 $fewbricks_fg = (new fewacf\field_group('Cookie alert', '1702141141a', $fewbricks_fg_location, 10, [
-    'style' => 'seamless',
-    'required' => true,
+    'style' => 'seamless'
 ]));
 
 $fewbricks_fg->add_field(new acf_fields\wysiwyg('Text', 'cookie_alert_text', '1702141141a', [
@@ -37,6 +36,7 @@ $fewbricks_fg->add_field(new acf_fields\wysiwyg('Text', 'cookie_alert_text', '17
 
 $fewbricks_fg->add_field(new acf_fields\text('Button text', 'cookie_alert_agree_button_text', '1702141141b', [
     'default_value' => 'OK',
+    'required' => true,
 ]));
 
 $fewbricks_fg->add_field(new acf_fields\wysiwyg('Text for no JavaScript', 'cookie_alert_no_js_text', '1702141145a', [

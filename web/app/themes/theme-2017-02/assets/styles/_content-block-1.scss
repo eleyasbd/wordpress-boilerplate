@@ -16,20 +16,41 @@
 
 .content-block-1__row--vertical-padding-standard,
 .content-block-1--vertical-padding-standard {
-  padding-top: 80px;
-  padding-bottom: 80px;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
 }
 
 .content-block-1__row--vertical-padding-medium,
 .content-block-1--vertical-padding-medium {
-  padding-top: 40px;
-  padding-bottom: 40px;
+
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
 }
 
 .content-block-1__row--vertical-padding-small,
 .content-block-1--vertical-padding-small {
-  padding-top: 20px;
-  padding-bottom: 20px;
+
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
 }
 
 .content-block-1__row--vertical-padding-none,
