@@ -10,6 +10,7 @@ These are the main things that you get in this package.
 - [Fewbricks](https://github.com/folbert/fewbricks) - A module system for Advanced Custom Fields PRO. Included using Composer. ACF PRO is not included in this repo (see "Plugins not included in Composer" later in this document) but required if you want to run Fewbricks (and recommended if you want to be able to build a user friendly and flexible admin area). If you aren't going ot use Fewbricks, make sure you delete the folder "fewbricks" in the theme folder. If you are going to use it, note that the project specific files are placed in the plugins/project-fewbricks.
 - [Debug Bar](https://wordpress.org/plugins/debug-bar/) - Adds a debug menu to the admin bar that shows query, cache, and other helpful debugging information. Included using Composer.
 - [Var Dumper](https://wordpress.org/plugins/var-dumper/) - A plugin to include var-dump package to use dump() function while developing or debugging. Included using Composer.
+- Fbt Wp Bp Func Plug - A functionality plugin with some common stuff that could be used for any WP site. Includes cookie alrt, environment snitch, customized login form and more. And yes, the name for the plugin is not the best but at least it is generic.
 
 ## Install
 

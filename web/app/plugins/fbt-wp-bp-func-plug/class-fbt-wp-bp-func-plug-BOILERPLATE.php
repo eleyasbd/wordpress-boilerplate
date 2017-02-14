@@ -3,15 +3,15 @@
 namespace FbtWpBpFuncPlug;
 
 /**
- * Class Fbt_Wp_Bp_Func_Plug_Admin_Filters
+ * Class Fbt_Wp_Bp_Func_Plug_BOILERPLATE
  * @package FbtWpBpFuncPlug
  */
-class Fbt_Wp_Bp_Func_Plug_Admin_Filters {
+class Fbt_Wp_Bp_Func_Plug_BOILERPLATE {
 
     /**
      * @var string
      */
-    private static $self = 'FbtWpBpFuncPlug\Fbt_Wp_Bp_Func_Plug_Cookie_Alert';
+    private static $self = 'FbtWpBpFuncPlug\Fbt_Wp_Bp_Func_Plug_BOILERPLATE';
 
     /**
      *

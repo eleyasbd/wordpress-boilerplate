@@ -17,10 +17,18 @@ namespace FbtWpBpFuncPlug;
 class Fbt_Wp_Bp_Func_Plug_Cookie_Alert
 {
 
-    public static function init()
+    /**
+     * @var string
+     */
+    private static $self = 'FbtWpBpFuncPlug\Fbt_Wp_Bp_Func_Plug_Cookie_Alert';
+
+    /**
+     *
+     */
+    public static function run()
     {
 
-        add_action('FbtWpBpFuncPlug\CookieAlert', ['FbtWpBpFuncPlug\Fbt_Wp_Bp_Func_Plug_Cookie_Alert', 'print_alert'],
+        add_action('FbtWpBpFuncPlug\CookieAlert', [self::$self, 'print_alert'],
             10, 6);
 
     }
@@ -113,7 +121,7 @@ class Fbt_Wp_Bp_Func_Plug_Cookie_Alert
     
                         <div class="col-sm-4 ' . $block_css_class_name . '-cookie-alert__button-wrapper">
                         
-                          <a href="#" class="btn btn-default ' . $block_css_class_name . '-cookie-alert__button" id="' . $block_css_class_name . '-cookie-alert__ok-trigger">' . $button_text . '</a>
+                          <a href="#" class="btn btn-primary ' . $block_css_class_name . '-cookie-alert__button" id="' . $block_css_class_name . '-cookie-alert__ok-trigger">' . $button_text . '</a>
                           
                         </div>
                     </div>
@@ -151,5 +159,3 @@ class Fbt_Wp_Bp_Func_Plug_Cookie_Alert
     }
 
 }
-
-Fbt_Wp_Bp_Func_Plug_Cookie_Alert::init();

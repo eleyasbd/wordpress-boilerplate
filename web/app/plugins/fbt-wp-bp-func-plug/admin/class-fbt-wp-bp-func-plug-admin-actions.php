@@ -2,18 +2,34 @@
 
 namespace FbtWpBpFuncPlug;
 
-class Fbt_Wp_Bp_Func_Plug_Admin_Actions {
+/**
+ * Class Fbt_Wp_Bp_Func_Plug_Admin_Actions
+ * @package FbtWpBpFuncPlug
+ */
+class Fbt_Wp_Bp_Func_Plug_Admin_Actions
+{
 
-    public function run() {
+    /**
+     * @var string
+     */
+    private static $self = 'FbtWpBpFuncPlug\Fbt_Wp_Bp_Func_Plug_Admin_Actions';
 
-        add_action('admin_footer', [$this, 'add_acf_utilities']);
+    /**
+     *
+     */
+    public static function run()
+    {
+
+        add_action('admin_footer', [self::$self, 'add_custom_acf_js']);
+        add_action('admin_notices', [self::$self, 'fewbricks_edit_field_group_info']);
 
     }
 
     /**
      *
      */
-    public function add_acf_utilities() {
+    public static function add_custom_acf_js()
+    {
 
         echo '
         <script>
@@ -28,6 +44,25 @@ class Fbt_Wp_Bp_Func_Plug_Admin_Actions {
                 
             });
         </script>';
+
+    }
+
+    /**
+     *
+     */
+    public static function fewbricks_edit_field_group_info()
+    {
+
+        if(get_current_screen()->post_type === 'acf-field-group') {
+
+            $message_html = '
+                <div class="notice notice-info">
+                    <p>If you are looking for field groups that you know should be here, please note that we are using <a href="https://github.com/folbert/fewbricks" target="_blank">Fewbricks</a> to create ACF-fields.</p>
+                </div>';
+
+            echo $message_html;
+
+        }
 
     }
 
