@@ -1,11 +1,14 @@
 # wordpress-boilerplate
 A WordPress setup with functionality and setups that is used over and over in my projects.
 
+You may want to rename this file to README.BOILERPLATE.md or something and create your own README for the project you are about to go to work on.
+
 ## Highlights
 These are the main things that you get in this package.
 
 - [Scotch Box](https://box.scotch.io/) - "A Vagrant LAMP Stack That Just Works"
 - [Bedrock](https://roots.io/bedrock/) - "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure."
+- [bedrock-capistrano](https://github.com/roots/bedrock-capistrano) - "Capistrano configs/integration for Bedrock". If you are totally new to Bedrock Capistrano, you may want to check out [https://github.com/folbert/notes/blob/master/WordPress__Bedrock/getting-up-and-running-with-bedrock.md](https://github.com/folbert/notes/blob/master/WordPress__Bedrock/getting-up-and-running-with-bedrock.md).
 - [Sage](https://github.com/roots/sage) - "WordPress starter theme with a modern development workflow". The version that was available on February 11, 2017. [Commit #bdad1fe](https://github.com/roots/sage/tree/bdad1fe3b19376919d80b8f001cf2f5c654fc19e)
 - [Fewbricks](https://github.com/folbert/fewbricks) - A module system for Advanced Custom Fields PRO. Included using Composer. ACF PRO is not included in this repo (see "Plugins not included in Composer" later in this document) but required if you want to run Fewbricks (and recommended if you want to be able to build a user friendly and flexible admin area). If you aren't going ot use Fewbricks, make sure you delete the folder "fewbricks" in the theme folder. If you are going to use it, note that the project specific files are placed in the plugins/project-fewbricks.
 - [Soil](https://github.com/roots/soil) - "WordPress plugin which contains a collection of modules to apply theme-agnostic front-end modifications."
@@ -39,7 +42,7 @@ Bedrock comes with the repo, but you will need to set it up. These steps are rep
 
 3. Access WP admin at http://[DOMAIN_IN_VAGRANTFILE]/wp/wp-admin
 
-### Sage
+### Working with Sage
 The theme is placed in `web/app/themes/` and has been given the generic name `theme-2017-02`. You can rename it if you want to. Make sure that you also update the data in style.css. Be aware that renaming the theme, will make the data in the accompanied SQL-file invalid. The steps below are taken from the [README for Sage](web/app/themes/theme-2017-02/README.SAGE.md).
  
 1. `cd web/app/themes/theme-2017-02/`
@@ -58,4 +61,7 @@ Due to paid plugins and licenses, the following plugins must be installed manual
 ### Yay!
 All set up! Time to develop!
 
-You may want to rename this file to README.BOILERPLATE.md or something ans create your own README for the project you are to embark on.
+### Setup Bedrock Capistrano
+If you want to deploy using bedrock-capistrano, follow the guide at [https://github.com/roots/bedrock-capistrano](https://github.com/roots/bedrock-capistrano). Under "Installation/configuration", we have already done step 1 and 2 for you. Step 3, 4 and 5 needs to be done once for the project.
+
+ If you are totally new to Bedrock Capistrano, you may want to check out [https://github.com/folbert/notes/blob/master/WordPress__Bedrock/getting-up-and-running-with-bedrock.md](https://github.com/folbert/notes/blob/master/WordPress__Bedrock/getting-up-and-running-with-bedrock.md)
