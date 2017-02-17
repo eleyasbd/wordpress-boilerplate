@@ -37,8 +37,8 @@ vendor/*
 # the boilerplate is used in a project.
 # ------------------------
 #!web/app/plugins/advanced-custom-fields-pro
-!web/app/plugins/fbt-wp-bp-func-plug
 !web/app/plugins/project-fewbricks
+!web/app/mu-plugins/fbt-wp-bp-func-plug
 # ------------------------
 # /Plug ins to keep in repo
 # ------------------------

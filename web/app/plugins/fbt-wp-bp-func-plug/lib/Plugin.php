@@ -18,6 +18,7 @@ namespace Folbert\FbtWpBpFuncPlug;
 use FbtWpBpFuncPlug\Frontend\CookieAlert;
 use FbtWpBpFuncPlug\Shared\Fewbricks;
 use Folbert\FbtWpBpFuncPlug\Admin\LoginForm;
+use Folbert\FbtWpBpFuncPlug\Shared\CommentsDisabler;
 use Folbert\FbtWpBpFuncPlug\Shared\EnvironmentSnitch;
 use Folbert\FbtWpBpFuncPlug\Shared\Feeds;
 
@@ -135,7 +136,8 @@ class Plugin {
 
 		(new Shared\Fewbricks())->define_hooks();
 		(new Shared\EnvironmentSnitch())->define_hooks();
-		(new Shared\Feeds())->define_hooks();
+		(new Shared\FeedsDisabler())->define_hooks();
+		(new Shared\CommentsDisabler())->define_hooks();
 
 		$this->loader->add_action('init', $plugin_shared, 'disable_wp_emojicons');
 		$this->loader->add_filter('the_generator', $plugin_shared, 'remove_wp_version');

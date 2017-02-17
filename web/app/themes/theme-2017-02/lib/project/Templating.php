@@ -63,7 +63,7 @@ class Templating
 
     } else {
 
-      die('SMK Theme View could not locate any of the files <pre>' . print_r($this->templates) . '</pre>.');
+      die('Templating could not locate any of the files <pre>' . print_r($this->templates) . '</pre>.');
     }
 
   }

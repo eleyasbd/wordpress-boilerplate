@@ -51,7 +51,7 @@ if (empty($main_elm_attributes['style'])) {
 
 ?>
 
-<div <?php echo \Wordpressboilerplate\Helpers\assoc_array_to_elm_attributes_string($main_elm_attributes); ?>>
+<div <?php echo Folbert\FbtWpBpFuncPlug\Shared\Helper::assoc_array_to_elm_attributes_string($main_elm_attributes); ?>>
 
   <?php
   if (!$data['in_container']) {

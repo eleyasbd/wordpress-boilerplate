@@ -23,7 +23,7 @@ class CookieAlert
 	public function define_hooks()
 	{
 
-		add_action('FbtWpBpFuncPlug\CookieAlert', [$this, 'print_alert'], 10, 6);
+		add_action('FbtWpBpFuncPlug\CookieAlert\Get', [$this, 'print_alert'], 10, 4);
 
 	}
 
@@ -38,30 +38,17 @@ class CookieAlert
 	}
 
 	/**
-	 * @param $text
-	 * @param $button_text
-	 * @param $block_css_class_name
+	 * @param $html
+	 * @param $main_elm_id
+	 * @param $hide_trigger_id
 	 * @param $body_class_to_hide_main_elm
-	 * @param string $no_script_text
-	 * @param bool $disabled
+	 * @internal param $block_css_class_name
 	 */
-	public function print_alert(
-		$text,
-		$button_text,
-		$block_css_class_name,
-		$body_class_to_hide_main_elm,
-		$no_script_text = '',
-		$disabled = false
-	) {
-
-		if ($disabled) {
-			echo '<!-- COOKIE ALERT DISABLED DUE TO DEV ENVIRONMENT -->';
-			return;
-		}
+	public function print_alert($html, $main_elm_id, $hide_trigger_id, $body_class_to_hide_main_elm) {
 
 		$output = $this->get_js1($body_class_to_hide_main_elm);
-		$output .= $this->get_html($block_css_class_name, $text, $button_text, $no_script_text);
-		$output .= $this->get_js2($block_css_class_name);
+		$output .= $html;
+		$output .= $this->get_js2($main_elm_id, $hide_trigger_id);
 
 		echo $output;
 
@@ -87,20 +74,21 @@ class CookieAlert
 	}
 
 	/**
-	 * @param $block_css_class_name
+	 * @param $main_elm_id
+	 * @param $hide_trigger_id
 	 * @return string
 	 */
-	private function get_js2($block_css_class_name)
+	private function get_js2($main_elm_id, $hide_trigger_id)
 	{
 
 		$js = '<script>
                 if(document.cookie.indexOf("' . self::get_cookies_okd_cookie_name() . '=1") === -1) {
                     var cookiesOkdCookieName = "' . self::get_cookies_okd_cookie_name() . '";
-                    var cookieAlertElm = document.getElementById("' . $block_css_class_name . '-cookie-alert");
+                    var cookieAlertElm = document.getElementById("' . $main_elm_id . '");
                     var exDate = new Date();
                     exDate.setDate(exDate.getDate() + 365);
 
-                    document.getElementById("' . $block_css_class_name . '-cookie-alert__ok-trigger").onclick = function() {
+                    document.getElementById("' . $hide_trigger_id . '").onclick = function() {
                         document.cookie = cookiesOkdCookieName + "=1; expires=" + exDate.toUTCString() + "; path=/; domain=' . $_SERVER['HTTP_HOST'] . '";
                         cookieAlertElm.style.display = "none";
                         return false;
@@ -109,46 +97,6 @@ class CookieAlert
             </script>';
 
 		return $js;
-
-	}
-
-	/**
-	 * @param $block_css_class_name
-	 * @param $text
-	 * @param $button_text
-	 * @param $no_script_text
-	 * @return string
-	 */
-	private function get_html($block_css_class_name, $text, $button_text, $no_script_text = '')
-	{
-
-		if (empty($no_script_text)) {
-			$no_script_text = 'You must have JavaScript activated in your browser to be able to hide this information.';
-		}
-
-		$html = '
-            <div id="' . $block_css_class_name . '-cookie-alert">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-8">
-                          <div class="' . $block_css_class_name . '-cookie-alert__text-wrapper">
-                            ' . $text . '
-                          </div>
-    
-                           <noscript><p>' . $no_script_text . '</p></noscript>
-    
-                        </div>
-    
-                        <div class="col-sm-4 ' . $block_css_class_name . '-cookie-alert__button-wrapper">
-                        
-                          <a href="#" class="btn btn-primary ' . $block_css_class_name . '-cookie-alert__button" id="' . $block_css_class_name . '-cookie-alert__ok-trigger">' . $button_text . '</a>
-                          
-                        </div>
-                    </div>
-                </div>
-            </div>';
-
-		return $html;
 
 	}
 

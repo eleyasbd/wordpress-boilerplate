@@ -62,7 +62,23 @@ $is_fullwidth_page = Layout::is_fullwidth_page(get_the_ID());
     ?>
 
     <?php
-      echo do_action('FbtWpBpFuncPlug\CookieAlert', get_field('cookie_alert_text', 'options'), get_field('cookie_alert_agree_button_text', 'options'), 'wpboilerplate', 'wpboilerplate--cookies-okd', get_field('cookie_alert_no_js_text', 'options'), (WP_ENV === '!development'));
+      echo do_action(
+        'FbtWpBpFuncPlug\CookieAlert\Get',
+        get_template_part('templates/parts/cookie-alert'),
+        'cookie-alert', // Id of main element
+        'cookie-alert-hide-trigger',// If of element that shoudl trigger hiding the alert
+        // Class to add to body when hide trigger is clicked..
+        // Use this to hide the alert
+        'wpboilerplate--cookies-okd'
+      );
+
+    /**
+    get_field('cookie_alert_text', 'options'),
+    get_field('cookie_alert_agree_button_text', 'options'),
+    'wpboilerplate', 'wpboilerplate--cookies-okd',
+    get_field('cookie_alert_no_js_text', 'options'),
+     */
+
       ?>
 
   </body>

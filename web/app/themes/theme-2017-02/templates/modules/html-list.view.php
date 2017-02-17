@@ -24,7 +24,7 @@ if(!empty($class_attr_value)) {
 
 ?>
 
-<<?php echo $list_tag; ?> <?php echo \Wordpressboilerplate\Helpers\assoc_array_to_elm_attributes_string($list_elm_attributes); ?>>
+<<?php echo $list_tag; ?> <?php echo Folbert\FbtWpBpFuncPlug\Shared\Helper::assoc_array_to_elm_attributes_string($list_elm_attributes); ?>>
 
   <?php
 
@@ -43,7 +43,7 @@ if(!empty($class_attr_value)) {
         $link_elm_attrs['target'] = '_blank';
       }
 
-      $item_content = '<a ' . \Wordpressboilerplate\Helpers\assoc_array_to_elm_attributes_string($link_elm_attrs) . '>' . $item_content . '</a>';
+      $item_content = '<a ' . Folbert\FbtWpBpFuncPlug\Shared\Helper::assoc_array_to_elm_attributes_string($link_elm_attrs) . '>' . $item_content . '</a>';
     }
 
     $items_html .= '<li>' . $item_content . '</li>';
