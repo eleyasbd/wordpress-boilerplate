@@ -1,5 +1,3 @@
 # ToDo
 
-@todo Attach an SQL-file with test data. Also instructions on how to update it to match new domain and/or theme name.
-
-@todo Create cookie alert.
+Moved to [GitHub issues](https://github.com/folbert/wordpress-boilerplate/issues) for the repo.

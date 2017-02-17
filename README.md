@@ -6,11 +6,12 @@ These are the main things that you get in this package.
 
 - [Scotch Box](https://box.scotch.io/) - "A Vagrant LAMP Stack That Just Works"
 - [Bedrock](https://roots.io/bedrock/) - "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure."
-- [Sage](https://github.com/roots/sage) - The verion that was available on February 11, 2017. [Commit #bdad1fe](https://github.com/roots/sage/tree/bdad1fe3b19376919d80b8f001cf2f5c654fc19e)
+- [Sage](https://github.com/roots/sage) - "WordPress starter theme with a modern development workflow". The version that was available on February 11, 2017. [Commit #bdad1fe](https://github.com/roots/sage/tree/bdad1fe3b19376919d80b8f001cf2f5c654fc19e)
 - [Fewbricks](https://github.com/folbert/fewbricks) - A module system for Advanced Custom Fields PRO. Included using Composer. ACF PRO is not included in this repo (see "Plugins not included in Composer" later in this document) but required if you want to run Fewbricks (and recommended if you want to be able to build a user friendly and flexible admin area). If you aren't going ot use Fewbricks, make sure you delete the folder "fewbricks" in the theme folder. If you are going to use it, note that the project specific files are placed in the plugins/project-fewbricks.
-- [Debug Bar](https://wordpress.org/plugins/debug-bar/) - Adds a debug menu to the admin bar that shows query, cache, and other helpful debugging information. Included using Composer.
-- [Var Dumper](https://wordpress.org/plugins/var-dumper/) - A plugin to include var-dump package to use dump() function while developing or debugging. Included using Composer.
-- Fbt Wp Bp Func Plug - A functionality plugin with some common stuff that could be used for any WP site. Includes cookie alrt, environment snitch, customized login form and more. And yes, the name for the plugin is not the best but at least it is generic.
+- [Soil](https://github.com/roots/soil) - "WordPress plugin which contains a collection of modules to apply theme-agnostic front-end modifications."
+- [Debug Bar](https://wordpress.org/plugins/debug-bar/) - "Adds a debug menu to the admin bar that shows query, cache, and other helpful debugging information." Included using Composer.
+- [Var Dumper](https://wordpress.org/plugins/var-dumper/) - "A plugin to include var-dump package to use dump() function while developing or debugging." Included using Composer.
+- Fbt Wp Bp Func Plug - A functionality plugin with some common stuff that could be used for any WP site. Includes cookie alert, environment snitch, customized login form and more. And yes, the name for the plugin is not the best but at least it is generic. Currently resides in the repo but will be moved to own repo.
 
 ## Install
 

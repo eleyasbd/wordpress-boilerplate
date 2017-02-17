@@ -18,14 +18,8 @@ $sage_includes = [
   'lib/wrapper.php',   // Theme wrapper class
   'lib/customizer.php', // Theme customizer
 
-  // Project specific
-  'lib/project/helpers.php',
-  'lib/project/class-folbert-templating.php',
-  'lib/project/setup.php',
-  'lib/project/actions.php',
-  'lib/project/filters.php',
-  'lib/project/admin-actions.php',
-  'lib/project/admin-filters.php',
+  'lib/project/Templating.php',
+  'lib/project/Layout.php',
 ];
 
 foreach ($sage_includes as $file) {

@@ -4,6 +4,12 @@
  * Do not delete this file!
  */
 
+// Remove wysiwyg to avoid having it flashing by when not needed
+add_action('init', 'fewbricks_remove_wysiwyg',100);
+function fewbricks_remove_wysiwyg(){
+    remove_post_type_support('page', 'editor');
+}
+
 // https://www.advancedcustomfields.com/resources/acf_add_options_page/
 acf_add_options_page([
     'page_title' => 'Options',

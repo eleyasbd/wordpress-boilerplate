@@ -2,9 +2,9 @@
 
 use Roots\Sage\Setup;
 use Roots\Sage\Wrapper;
-use Wordpressboilerplate\Setup as wpbpsetup;
+use Project\Layout;
 
-$is_fullwidth_page = wpbpsetup\is_fullwidth_page(get_the_ID());
+$is_fullwidth_page = Layout::is_fullwidth_page(get_the_ID());
 
 ?>
 
