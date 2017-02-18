@@ -18,6 +18,7 @@ $sage_includes = [
   'lib/wrapper.php',   // Theme wrapper class
   'lib/customizer.php', // Theme customizer
 
+  'lib/project/B4stWalkerNavMenu.php',
   'lib/project/Templating.php',
   'lib/project/Layout.php',
 ];
