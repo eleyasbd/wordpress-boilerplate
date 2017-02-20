@@ -4,6 +4,8 @@
  * Do not delete this file!
  */
 
+require_once(__DIR__ . '/../lib/bootstrap-grid-generator.php');
+
 // Remove wysiwyg to avoid having it flashing by when not needed
 add_action('init', 'fewbricks_remove_wysiwyg',100);
 function fewbricks_remove_wysiwyg(){

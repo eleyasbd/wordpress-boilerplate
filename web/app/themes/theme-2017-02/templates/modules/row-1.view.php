@@ -25,7 +25,7 @@ $columns_css_classes = $this->get_columns_css_classes();
 
 ?>
 
-<div class="<?php echo $main_elm_css_classes; ?>" style="border-bottom: solid 10px white">
+<div class="<?php echo $main_elm_css_classes; ?>">
 
   <?php
   // Loop the colums in the row

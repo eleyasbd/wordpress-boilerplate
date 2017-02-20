@@ -25,8 +25,8 @@ class content_block_1 extends project_brick
     public function set_fields()
     {
 
-        $this->set_settings_fields();
         $this->set_content_fields();
+        $this->set_settings_fields();
 
     }
 
@@ -69,9 +69,9 @@ class content_block_1 extends project_brick
             'button_label' => 'Add row',
         ]);
 
-        $layout = (new layout('Column group', 'layout_5', '1702172203x'));
+        $layout = (new layout('Flexible Columns Group', 'layout_5', '1702172203x'));
         $layout->set_setting('display', 'table');
-        $layout->add_brick((new column_group('column-group', '1702172203y')));
+        $layout->add_brick((new flexible_column_group('flexible-column-group', '1702172203y')));
         $fc->add_layout($layout);
 
         $layout = new layout('Row - 1 column', 'layout_1', '1702122301b');

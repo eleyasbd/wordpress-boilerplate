@@ -29,6 +29,7 @@ $fewbricks_fc = (new acf_fields\flexible_content('', 'page_content', '1702120013
 
 $fewbricks_l = new fewacf\layout('Content block', 'layout_1', '1702122250a');
 $fewbricks_l->add_brick((new bricks\content_block_1('1-column', '1702122250b')));
+$fewbricks_l->set_setting('display', 'block');
 $fewbricks_fc->add_layout($fewbricks_l);
 
 $fewbricks_fg->add_flexible_content($fewbricks_fc);

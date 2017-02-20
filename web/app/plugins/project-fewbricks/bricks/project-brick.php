@@ -48,6 +48,20 @@ class project_brick extends brick
     }
 
     /**
+     * @param $data_name
+     * @param bool $post_id
+     * @param bool $prepend_this_name
+     * @param bool $get_from_sub_field
+     * @return bool|mixed|null|void
+     */
+    public function get_field($data_name, $post_id = false, $prepend_this_name = true, $get_from_sub_field = false)
+    {
+
+        return parent::get_field($data_name, $post_id = false, $prepend_this_name = true, $get_from_sub_field = false);
+
+    }
+
+    /**
      * @param $data_key
      * @param bool $value
      * @return string

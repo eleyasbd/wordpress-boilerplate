@@ -40,7 +40,7 @@ class Fewbricks {
 	 */
 	public function get_fewbricks_project_files_base_path() {
 
-		return WP_PLUGIN_DIR . '/project-fewbricks';
+		return dirname(__FILE__) . '/../../../project-fewbricks';
 
 	}
 

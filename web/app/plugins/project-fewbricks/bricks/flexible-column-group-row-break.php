@@ -8,7 +8,7 @@ use fewbricks\acf\fields as acf_fields;
  * Class text_and_content
  * @package fewbricks\bricks
  */
-class column_group_row_break extends project_brick
+class flexible_column_group_row_break extends project_brick
 {
 
     /**
@@ -38,6 +38,8 @@ class column_group_row_break extends project_brick
      */
     protected function get_brick_html()
     {
+
+        return $this->get_brick_template_html();
 
     }
 
