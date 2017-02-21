@@ -70,7 +70,7 @@ class content_block_1 extends project_brick
         ]);
 
         $layout = (new layout('Flexible Columns Group', 'layout_5', '1702172203x'));
-        $layout->set_setting('display', 'table');
+        $layout->set_setting('display', 'row');
         $layout->add_brick((new flexible_column_group('flexible-column-group', '1702172203y')));
         $fc->add_layout($layout);
 

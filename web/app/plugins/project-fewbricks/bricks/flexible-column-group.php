@@ -42,46 +42,11 @@ class flexible_column_group extends project_brick
         $this->add_field(new acf_fields\tab($this->get_setting('label') . ' - Columns', 'settings', '1702201255a'));
 
         $fc = new acf_fields\flexible_content('', 'content', '1702172201a', [
-            'button_label' => 'Add ' . $this->get_setting('label') . ' content',
+            'button_label' => 'Add column or row break',
         ]);
 
         $layout = new layout('Column', 'column', '1702172201b');
         $layout->add_brick((new flexible_column_group_column('Column', '1702172201c')));
-
-
-       /* $cfc = new acf_fields\flexible_content('Column content', 'column_content', '1702201603a', [
-            'button_label' => 'Add column content',
-        ]);
-
-
-        $l = new layout('', 'headline', '17022210b');
-        $l->add_brick(new headline('headline', '17022210c'));
-        $cfc->add_layout($l);
-
-        $l = new layout('', 'button', '17022210d');
-        $l->add_brick(new button('button', '17022210e'));
-        $cfc->add_layout($l);
-
-        $l = new layout('', 'image', '17022210f');
-        $l->add_brick(new image('image', '17022210g'));
-        $cfc->add_layout($l);
-
-        $l = new layout('', 'list', '17022210h');
-        $l->add_brick(new html_list('html_list', '17022210i'));
-        $cfc->add_layout($l);
-
-        $l = new layout('', 'text', '17022210j');
-        $l->add_brick(new wysiwyg('text', '17022210k'));
-        $cfc->add_layout($l);
-
-        $l = new layout('', 'video', '17022210l');
-        $l->add_brick(new youtube('video', '17022210m'));
-        $cfc->add_layout($l);
-
-
-        $layout->add_flexible_content($cfc);*/
-
-
 
         $layout->set_setting('display', 'block');
         $fc->add_layout($layout);
@@ -102,87 +67,14 @@ class flexible_column_group extends project_brick
 
         $this->add_field(new acf_fields\tab($this->get_setting('label') . ' - Settings', 'settings', '1702201255b'));
 
-        $this->set_column_layout_setting_fields();
+        $this->add_common_field('vertical_alignment', '1702201255c', [
+            'label' => 'Row - Columns vertical alignment'
+        ]);
 
-        if ($this->get_arg('nr_of_columns') > 1) {
+        $this->add_common_field('color_scheme_1', '1702211451a');
 
-            $this->add_common_field('vertical_alignment', '1702201255c', [
-                'label' => 'Row - Columns vertical alignment'
-            ]);
-
-        }
-
-        $this->add_field(new acf_fields\select('Row - Vertical padding', 'vertical_padding', '1702201255d', [
-            'choices' => [
-                'standard' => 'Standard',
-                'medium' => 'Medium',
-                'small' => 'Small',
-                'none' => 'None'
-            ],
-            'default_value' => 'standard',
-            'allow_null' => false,
-        ]));
-
-    }
-
-    /**
-     *
-     */
-    private function set_column_layout_setting_fields()
-    {
-
-        // The array key refers to the nr of columns for which the choices should
-        // be available.
-        $choices = [
-            2 => [
-                'evenly' => 'Evenly distributed',
-                '60_40' => '60/40',
-            ],
-            3 => [
-                'evenly' => 'Evenly distributed',
-                'center_hero' => 'Wider center column'
-            ],
-            4 => [
-                'evenly' => 'Evenly distributed'
-            ],
-        ];
-
-        if (isset($choices[$this->get_arg('nr_of_columns')])) {
-
-            $this->add_field(new acf_fields\select('Row - Column layout', 'column_layout', '1702130049a', [
-                'choices' => $choices[$this->get_arg('nr_of_columns')],
-                'default_value' => 'evenly',
-                'allow_null' => false,
-            ]));
-
-        }
-
-    }
-
-    /**
-     *
-     */
-    private function get_view_data()
-    {
-
-        $view_data = [];
-        $this->set_cached_layouts();
-
-        $view_data['nr_of_columns'] = $this->get_nr_of_columns();
-        $view_data['rows'] = $this->get_rows();
-
-        dump($view_data['rows']);
-
-        $view_data['vertical_alignment'] = $this->get_field('vertical_alignment');
-        if (empty($view_data['vertical_alignment'])) {
-            $view_data['vertical_alignment'] = 'top';
-        }
-
-        $view_data['vertical_padding'] = $this->get_field('vertical_padding');
-
-        $view_data['layouts'] = $this->get_cached_layouts();
-
-        return $view_data;
+        $this->add_field(new acf_fields\image('Background image', 'background_image', '1702211441a'));
+        $this->add_common_field('color_1', '1702211455a');
 
     }
 
@@ -200,11 +92,11 @@ class flexible_column_group extends project_brick
             /** @var brick $layout */
             $layout = acf_fields\flexible_content::get_sub_field_brick_instance();
 
-            dump($layout->get_html());
-
             // Set column width as custom data here since we will be outside the loop later on
             // which will make it hard for us to get the data then.
             $layout->set_data_item('column_width', $layout->get_field('column_width'));
+            $layout->set_data_item('content_html', $layout->get_html());
+
             $this->cached_layouts[] = $layout;
 
         }
@@ -259,14 +151,33 @@ class flexible_column_group extends project_brick
     }
 
     /**
+     *
+     */
+    private function get_view_data()
+    {
+
+        $view_data = [];
+        $view_data['layouts'] = $this->get_cached_layouts();
+        $view_data['nr_of_columns'] = $this->get_nr_of_columns();
+        $view_data['rows'] = $this->get_rows();
+
+        $view_data['vertical_alignment'] = $this->get_field('vertical_alignment');
+
+        $view_data['css_block_class'] = $this->get_html_args['block_css_class'];
+
+        $view_data['vertical_padding'] = $this->get_field('vertical_padding');
+
+        return $view_data;
+
+    }
+
+    /**
      * @return string
      */
     protected function get_brick_html()
     {
 
         $view_data = $this->get_view_data();
-
-        $view_data['css_block_class'] = $this->get_html_args['block_css_class'];
 
         return $this->get_brick_template_html($view_data);
 

@@ -25,6 +25,8 @@ class flexible_column_group_column extends project_brick
     private function set_content_fields()
     {
 
+        $this->add_field(new acf_fields\tab('Column content', 'column_content', '1702211515a'));
+
         $fc = new acf_fields\flexible_content('Column content', 'column_modules', '17022210a', [
             'button_label' => 'Add column content',
         ]);
@@ -61,6 +63,8 @@ class flexible_column_group_column extends project_brick
     private function set_settings_fields()
     {
 
+        $this->add_field(new acf_fields\tab('Column settings', 'column_content', '1702211515b'));
+
         $this->add_field(new acf_fields\message(
             'Column settings',
             'column_settings',
@@ -92,11 +96,11 @@ class flexible_column_group_column extends project_brick
             ]
         ));
 
-        $this->add_field(new acf_fields\true_false('Preserve column width on small screens', 'preserve_column_width_on_small_screens', '1702201532a'));
+        //$this->add_field(new acf_fields\true_false('Preserve column width on small screens', 'preserve_column_width_on_small_screens', '1702201532a'));
 
         $this->add_field(new acf_fields\select(
-                'Horizontal alignment',
-                'horizontal_alignment',
+                'Horizontal alignment of content',
+                'horizontal_alignment_content',
                 '1702172207b',
                 [
                     'choices' => [
@@ -118,21 +122,17 @@ class flexible_column_group_column extends project_brick
 
         $view_data = [];
 
-        $view_data['column_css_classes'] = $this->get_html_args['column_css_classes'];
-
         $view_data['content'] = '';
 
-        dump($this->have_rows('content'));
-
-        while ($this->have_rows('content')) {
+        while ($this->have_rows('column_modules')) {
 
             $this->the_row();
-
-            echo 'A';
 
             $view_data['content'] .= acf_fields\flexible_content::get_sub_field_brick_instance()->get_html();
 
         }
+
+        $view_data['horizontal_alignment_content'] = $this->get_field('horizontal_alignment_content');
 
         return $view_data;
 
